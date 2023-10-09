@@ -1,0 +1,26 @@
+// Pedir al usuario que ingrese una cadena
+var cadena = prompt("Ingresa una cadena: ");
+
+// Quitar los espacios en blanco de la cadena
+cadena = cadena.replace(/\s/g, "");
+
+// Convertir la cadena a minúsculas para ignorar mayúsculas
+cadena = cadena.toLowerCase();
+
+// Verificar si la cadena es un palíndromo
+var esPalindromo = true;
+var longitud = cadena.length;
+
+for (var i = 0; i < longitud / 2; i++) {
+  if (cadena[i] !== cadena[longitud - i - 1]) {
+    esPalindromo = false;
+    break;
+  }
+}
+
+// Mostrar el resultado
+if (esPalindromo) {
+  alert("La cadena es un palíndromo.");
+} else {
+  alert("La cadena no es un palíndromo.");
+}
